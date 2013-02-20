@@ -1,21 +1,146 @@
 object dlgDataTree: TdlgDataTree
-  Left = 504
-  Height = 240
-  Top = 274
-  Width = 320
-  Caption = 'dlgDataTree'
-  ClientHeight = 240
-  ClientWidth = 320
+  Left = 326
+  Height = 493
+  Top = 158
+  Width = 686
+  Caption = 'Integration Editor'
+  ClientHeight = 493
+  ClientWidth = 686
+  Position = poMainFormCenter
   LCLVersion = '1.1'
-  object TreeView1: TTreeView
+  object Panel1: TPanel
     Left = 0
-    Height = 240
+    Height = 50
     Top = 0
-    Width = 320
-    Align = alClient
-    AutoExpand = True
-    DefaultItemHeight = 18
+    Width = 686
+    Align = alTop
+    Alignment = taLeftJustify
+    BevelOuter = bvNone
+    Caption = ' Integration Editor'
+    Color = clPurple
+    Font.Color = clWhite
+    Font.Height = -32
+    ParentColor = False
+    ParentFont = False
     TabOrder = 0
-    Options = [tvoAutoExpand, tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+  end
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 453
+    Width = 674
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 1
+    ShowButtons = [pbClose]
+    ShowBevel = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 289
+    Top = 50
+    Width = 329
+    Align = alLeft
+    Caption = 'Input Adaptor'
+    ClientHeight = 271
+    ClientWidth = 325
+    TabOrder = 2
+    object TreeView1: TTreeView
+      Left = 0
+      Height = 271
+      Top = 0
+      Width = 325
+      Align = alClient
+      AutoExpand = True
+      DefaultItemHeight = 18
+      TabOrder = 0
+      Options = [tvoAutoExpand, tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+    end
+  end
+  object Panel2: TPanel
+    Left = 334
+    Height = 289
+    Top = 50
+    Width = 352
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 289
+    ClientWidth = 352
+    TabOrder = 3
+    object GroupBox2: TGroupBox
+      Left = 0
+      Height = 46
+      Top = 0
+      Width = 352
+      Align = alTop
+      Caption = 'Output Adaptors'
+      ClientHeight = 28
+      ClientWidth = 348
+      TabOrder = 0
+      object cmbAdaptors: TComboBox
+        Left = 0
+        Height = 28
+        Top = 0
+        Width = 348
+        Align = alClient
+        ItemHeight = 0
+        OnChange = cmbAdaptorsChange
+        OnSelect = cmbAdaptorsChange
+        Style = csDropDownList
+        TabOrder = 0
+      end
+    end
+    object TreeView2: TTreeView
+      Left = 0
+      Height = 243
+      Top = 46
+      Width = 352
+      Align = alClient
+      AutoExpand = True
+      DefaultItemHeight = 18
+      TabOrder = 1
+      Options = [tvoAutoExpand, tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+    end
+  end
+  object Splitter1: TSplitter
+    Left = 329
+    Height = 289
+    Top = 50
+    Width = 5
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 103
+    Top = 344
+    Width = 686
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 103
+    ClientWidth = 686
+    TabOrder = 5
+    object GroupBox3: TGroupBox
+      Left = 0
+      Height = 103
+      Top = 0
+      Width = 686
+      Align = alClient
+      Caption = 'Transformations'
+      TabOrder = 0
+    end
+  end
+  object Splitter2: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 5
+    Top = 339
+    Width = 686
+    Align = alBottom
+    ResizeAnchor = akBottom
   end
 end

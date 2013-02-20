@@ -45,7 +45,6 @@ begin
   {$I datasetinputadaptor_icon.lrs}
   RegisterComponents('LazDataIntegrator',[TDataSetInputAdaptor]);
   RegisterComponentEditor([TDataSetInputAdaptor], TDataSetInputAdaptorComponentEditor);
-  RegisterComponentEditor([TDataSetInputAdaptor], TBaseInputAdaptorComponentEditor);
 end;
 
 { TDataSetInputAdaptorComponentEditor }
@@ -56,7 +55,7 @@ var
 begin
   lComponent := (GetComponent as TDataSetInputAdaptor);
   lComponent.DoBefore;
-  TdlgDataTree.Execute(lComponent.Tree);
+  TdlgDataTree.Execute(lComponent.Tree, lComponent);
 end;
 
 procedure TDataSetInputAdaptorComponentEditor.ExecuteVerb(Index: Integer);
