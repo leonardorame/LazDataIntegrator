@@ -1,0 +1,201 @@
+object Form1: TForm1
+  Left = 614
+  Height = 319
+  Top = 167
+  Width = 434
+  Caption = 'Form1'
+  ClientHeight = 319
+  ClientWidth = 434
+  LCLVersion = '1.1'
+  object Button1: TButton
+    Left = 26
+    Height = 25
+    Top = 205
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object IBConnection1: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'tarjeta'
+    KeepConnection = False
+    Password = 'masterkey'
+    UserName = 'SYSDBA'
+    CharSet = 'utf-8'
+    HostName = '192.168.0.254'
+    LogEvents = []
+    left = 48
+    top = 40
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'idpaciente'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'idtipodocumento'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'nrodocumento'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'apellidopaterno'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'apellidomaterno'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'nombres'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'fechanacimiento'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'idsexo'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'domicilio'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'telefono'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'idlocalidad'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'iddepartamento'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'idprovincia'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'idestadocivil'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'nrofcr'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'idetnia'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'idreligion'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'protesisortesis'
+        DataType = ftMemo
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'alergias'
+        DataType = ftMemo
+        Precision = -1
+        Size = 0
+      end>
+    Database = PQConnection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from paciente'
+      'limit 10'
+    )
+    Params = <>
+    left = 56
+    top = 112
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = PQConnection1
+    left = 168
+    top = 40
+  end
+  object XMLOutputAdaptor1: TXMLOutputAdaptor
+    FileName = '/home/leonardo/salida.xml'
+    left = 264
+    top = 184
+  end
+  object DataSetInputAdaptor1: TDataSetInputAdaptor
+    OutputAdaptors = <    
+      item
+        Adaptor = XMLOutputAdaptor2
+        Enabled = True
+      end    
+      item
+        Adaptor = XMLOutputAdaptor1
+        Enabled = False
+      end>
+    DataSet = SQLQuery1
+    left = 172
+    top = 117
+  end
+  object PQConnection1: TPQConnection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'oulton_20120222'
+    KeepConnection = False
+    Password = 'postgres'
+    Transaction = SQLTransaction1
+    UserName = 'postgres'
+    HostName = '192.168.0.161'
+    LogEvents = []
+    left = 320
+    top = 56
+  end
+  object XMLOutputAdaptor2: TXMLOutputAdaptor
+    left = 169
+    top = 253
+  end
+end

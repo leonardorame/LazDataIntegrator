@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="4">
+    <Name Value="lazDataIntegrator"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Files Count="6">
+      <Item1>
+        <Filename Value="datasetinputadaptor.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="DataSetInputAdaptor"/>
+      </Item1>
+      <Item2>
+        <Filename Value="tree.pas"/>
+        <UnitName Value="tree"/>
+      </Item2>
+      <Item3>
+        <Filename Value="frmdatatree.pas"/>
+        <UnitName Value="frmDataTree"/>
+      </Item3>
+      <Item4>
+        <Filename Value="frmdatatree.lfm"/>
+        <Type Value="LFM"/>
+      </Item4>
+      <Item5>
+        <Filename Value="xmloutputadaptor.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="XMLOutputAdaptor"/>
+      </Item5>
+      <Item6>
+        <Filename Value="fileoutputadaptor.pas"/>
+        <UnitName Value="fileoutputadaptor"/>
+      </Item6>
+    </Files>
+    <Type Value="RunAndDesignTime"/>
+    <RequiredPkgs Count="3">
+      <Item1>
+        <PackageName Value="IDEIntf"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

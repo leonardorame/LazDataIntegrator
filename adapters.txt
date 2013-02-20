@@ -1,0 +1,38 @@
+Los adaptadores son componentes que permiten convertir un formato de entrada a
+un formato de salida.
+
+Hay dos tipos de adaptadores, los InputAdaptor y los OutputAdaptor, los Input
+Adaptor leen desde diferentes formatos, como puede ser TDataSet, XML, JSON,
+HL7, CSV, y generan una instancia de un objeto TIntegrationDataObject, que es
+una estructura tipo arbol.
+
+Como ejemplo, en tiempo de diseño, en un datamodule, puede haber un conector a
+base de datos, y un TDataset que realice una consulta a esa base de datos.
+Luego un TInputDatasetAdapter, tendrá como propiedad "Dataset" al dataset
+anteriormente creado. Esto permite generar la estructura
+TIntegrationDataObject, que mediante un editor puede visualizarse. 
+
+El TIntegrationDataObject, se conecta a un TIntegrationTransformer, que es una
+lista ordenada de transformaciones a realizar a los datos de entrada. Cada
+transformación dispara eventos del tipo OnTransformation(ANode:
+TIntegrationTransformerNode). El TIntegrationTransformerItem tiene propiedades
+del tipo AsInteger, AsString, etc., que permiten leer y escribir el valor del nodo.
+
+Además de los input adaptor, existen los OutputAdaptors, que son una colección
+de objetos que realizan la tarea inversa, es decir, escribir el contenido del
+TIntegrationTransformer en diferentes salidas, como TCP, HTTP, FILE, etc. Para
+realizar esta tarea debe existir un mapeador entre el InputAdaptor y el OutputAdaptor.
+
+Cada Output Adaptor tamnbién tiene un TIntegrationDataObject asociado, que
+puede instanciarse basado en un XML, HL7, JSon, CSV, etc. de ejemplo, con lo
+que se genera un arbol de nodos, que permiten mapearlo con otro nodo del InputAdapter.
+
+
+
+TDatasetAdapter
+---------------
+
+DesignTime:
+
+Lee la estructura de un TDataSet, y 
+
